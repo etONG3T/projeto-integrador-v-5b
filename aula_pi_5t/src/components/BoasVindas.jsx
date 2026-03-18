@@ -1,6 +1,6 @@
 function BoasVindas() {
     return (
-            <h2>Bem-vindo ao curso de React</h2>
+            <h2>Desafio Prático</h2>
     )
 }
 

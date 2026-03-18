@@ -1,6 +1,6 @@
 function Titulo() {
     return (
-            <h2>Curso de React</h2>
+            <h2>Lista Dinâmica</h2>
     )
 }
 

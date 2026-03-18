@@ -1,25 +1,26 @@
 import './App.css'
-import Titulo from './components/Titulo'
-import BoasVindas from './components/BoasVindas'
-import Aluno from './components/Aluno'
-import Botao from './components/Botao'
-import AlunoCapturar from './components/AlunoCapturar'
-import 
+import React, { useState } from 'react';
 
 function App() {
-  function mostrarMensagem() {
-    alert('Bem-vindo ao React!')
+  const [nome, setNome] = useState('');
+  const [nomeList, setNomeList] = useState([]);
+  
+  const incrementar = () => {
+    setNomeList([...nomeList, nome]);
   }
   
   return (
     <div>
-      <BoasVindas />
-      <Titulo />
-      <Aluno />
-      <button onClick={Botao}>Clique aqui</button>
-      <input type="text" onChange={AlunoCapturar} placeholder="Digite seu nome aqui..." />
+      <h2>Lista</h2>
+      <input type='text' placeholder='Digite um nome' value={nome} onChange={(e) => setNome(e.target.value)}/>
+      <button onClick={incrementar}>Adicionar</button>
+      <ul>
+        {nomeList.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
   )
 }
 
-export default App
+export default App;
